@@ -8,7 +8,6 @@ Plan (pas forcément définitif) :
     * Variables Names (voir http://pyvideo.org/video/542/pyohio-2011-names-objects-and-plummeting-from)
     * Functions
         * Mentionner les keyword arguments (au moins pour qu'ils ne soient pas surpris d'en voir)
-        * Très rapidemment expliquer le `if __name__ == '__main__':`
 * Structures de base et leur utilisation
     * Listes, dictionnaires
         * Itérer, trier.
@@ -28,6 +27,7 @@ Plan (pas forcément définitif) :
     * os
     * shutil
 * Quelques concepts avancés (?) : (impérativement avoir des TL;DR bien définis)
+    * `if __name__ == '__main__':` (pas vraiment avancé, mais bon)
     * POO, un zeste de syntaxe.
     * Décorateurs
 * Further readings:
