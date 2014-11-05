@@ -1,0 +1,102 @@
+\documentclass[ignorenonframetext,]{beamer}
+
+\setbeamercovered{transparent}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+    \let\insertpartnumber\relax
+    \let\partname\relax
+    \frame{\partpage}
+}
+\AtBeginSection{
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+}
+\AtBeginSubsection{
+    \let\insertsubsectionnumber\relax
+    \let\subsectionname\relax
+    \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+
+\title{Introduction to Python scripting}
+\author{Paul ``Dettorer'' Hervot}
+\date{, 2014}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Meta}\label{meta}
+
+\begin{frame}{Classification}
+    \begin{itemize}
+        \item High level
+        \item Interpreted
+        \item Object oriented
+        \item Imperative
+        \item Functional style is easily doable!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Zen of Python (PEP 20)}
+
+    Python Enhancement Proposal number 20
+
+    \setbeamertemplate{itemize/enumerate body begin}{\tiny}
+    \begin{itemize}
+        \item<1-1> Beautiful is better than ugly.
+        \item<1-2> Explicit is better than implicit.
+        \item<1-2> Simple is better than complex.
+        \item<1-1> Complex is better than complicated.
+        \item<1-1> Flat is better than nested.
+        \item<1-1> Sparse is better than dense.
+        \item<1-2> Readability counts.
+        \item<1-1> Special cases aren't special enough to break the rules.
+        \item<1-1> Although practicality beats purity.
+        \item<1-1> Errors should never pass silently.
+        \item<1-1> Unless explicitly silenced.
+        \item<1-1> In the face of ambiguity, refuse the temptation to guess.
+        \item<1-2> There should be one-- and preferably only one --obvious way to do it.
+        \item<1-1> Although that way may not be obvious at first unless you're Dutch.
+        \item<1-1> Now is better than never.
+        \item<1-1> Although never is often better than \emph{right} now.
+        \item<1-2> If the implementation is hard to explain, it's a bad idea.
+        \item<1-1> If the implementation is easy to explain, it may be a good idea.
+        \item<1-2> Namespaces are one honking great idea -- let's do more of those!
+    \end{itemize}
+    \setbeamertemplate{itemize/enumerate body begin}{\large}
+\end{frame}
+
+\begin{frame}{Zen of Python (PEP 20)}
+
+    Python Enhancement Proposal number 20
+
+    \begin{itemize}
+        \item<1-2> Explicit is better than implicit.
+        \item<1-2> Simple is better than complex.
+        \item<1-2> Readability counts.
+        \item<1-2> There should be one (and preferably only one) obvious way to do it.
+        \item<1-2> If the implementation is hard to explain, it's a bad idea.
+        \item<1-2> Namespaces are one honking great idea, let's do more of those!
+    \end{itemize}
+\end{frame}
+
+\section{Basic syntax}\label{basic-syntax}
+
+\section{Data structures}\label{data-structures}
+
+\section{Some useful modules}\label{some-useful-modules}
+
+\section{A bit further}\label{a-bit-further}
+
+\section{And now for something completely
+different}\label{and-now-for-something-completely-different}
+
+\end{document}
