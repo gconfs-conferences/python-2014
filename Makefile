@@ -5,6 +5,10 @@ slides.pdf: slides.tex Makefile
 evince: slides.pdf
 	nohup evince slides.pdf > /dev/null 2>&1 &
 
+.PHONY: xpdf
+xpdf: slides.pdf
+	nohup xpdf slides.pdf > /dev/null 2>&1 &
+
 .PHONY: clean
 clean:
 	rm -f slides.pdf
