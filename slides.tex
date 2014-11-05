@@ -1,9 +1,13 @@
 \documentclass[ignorenonframetext,]{beamer}
+\usetheme{Warsaw}
 
-\setbeamercovered{transparent}
+% Various settings
+\setbeamercovered{transparent} % Just gray covered text in overlays
+\useoutertheme{infolines} % Display the slides number in the footline (and a smaller header)
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
+
+% Add a title slide before each part, section and subsection
+% TODO: I want round corners and a little shadow like on the title page :<
 \AtBeginPart{
     \let\insertpartnumber\relax
     \let\partname\relax
@@ -33,14 +37,15 @@
 \begin{document}
 \frame{\titlepage}
 
-\section{Meta}\label{meta}
+\section{Basics}\label{basics}
+\subsection{Meta}\label{meta}
 
 \begin{frame}{Classification}
     \begin{itemize}
+        \item Imperative
         \item High level
         \item Interpreted
         \item Object oriented
-        \item Imperative
         \item Functional style is easily doable!
     \end{itemize}
 \end{frame}
@@ -60,10 +65,10 @@
         \item<1-2> Readability counts.
         \item<1-1> Special cases aren't special enough to break the rules.
         \item<1-1> Although practicality beats purity.
-        \item<1-1> Errors should never pass silently.
+        \item<1-2> Errors should never pass silently.
         \item<1-1> Unless explicitly silenced.
         \item<1-1> In the face of ambiguity, refuse the temptation to guess.
-        \item<1-2> There should be one-- and preferably only one --obvious way to do it.
+        \item<1-2> There should be one -- and preferably only one -- obvious way to do it.
         \item<1-1> Although that way may not be obvious at first unless you're Dutch.
         \item<1-1> Now is better than never.
         \item<1-1> Although never is often better than \emph{right} now.
@@ -78,25 +83,26 @@
 
     Python Enhancement Proposal number 20
 
-    \begin{itemize}
+    \begin{itemize}[<+-| alert@+>]
+        \item Readability counts.
         \item Explicit is better than implicit.
         \item Simple is better than complex.
-        \item Readability counts.
-        \item There should be one (and preferably only one) obvious way to do it.
+        \item Errors should never pass silently (unless explicitly silenced)
+        \item There should be one -- and preferably only one -- obvious way to do it.
         \item If the implementation is hard to explain, it's a bad idea.
         \item Namespaces are one honking great idea, let's do more of those!
     \end{itemize}
 \end{frame}
 
-\section{Basic syntax}\label{basic-syntax}
+\subsection{Syntax}\label{basic-syntax}
+\subsection{Data structures}\label{data-structures}
 
-\section{Data structures}\label{data-structures}
+\section{Modules}\label{some-useful-modules}
+\subsection{MANY exists}
+\subsection{Write your own ones!}
 
-\section{Some useful modules}\label{some-useful-modules}
-
-\section{A bit further}\label{a-bit-further}
-
-\section{And now for something completely
-different}\label{and-now-for-something-completely-different}
+\section{The end}
+\subsection{A bit further}\label{a-bit-further}
+\subsection{And now for something completely different}\label{and-now-for-something-completely-different}
 
 \end{document}
