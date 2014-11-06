@@ -18,7 +18,7 @@
 \setbeamercovered{transparent} % Just gray covered text in overlays
 
 
-% Add a title slide before each part, section and subsection
+% Add a tableofcontent slide before each subsection
 \AtBeginSubsection{
     \frame{\tableofcontents[currentsubsection]}
 }
@@ -217,17 +217,14 @@ TypeError: Can't convert 'int' object to str implicitly
     \end{minted}
 \end{frame}
 
-\begin{frame}[fragile]{Exception}
-    \begin{minted}{python}
->>> count = 3
->>> try:
-...     'Then shalt thou count to ' + count + '.'
-... except TypeError:
-...     'NI!'
-...
-'NI!'
-    \end{minted}
+\subsection{Data structures}
+\begin{frame}{Lists}
 \end{frame}
+
+\begin{frame}{Dictionaries}
+\end{frame}
+
+\subsection{Flow control}
 
 \begin{frame}[fragile]{Functions}
 
@@ -239,13 +236,63 @@ def say_hello():
 
 say_hello()
     \end{minted}
+
+Out:
+    \begin{tcolorbox}
+And now for something completely different
+    \end{tcolorbox}
 \end{frame}
 
-\subsection{Data structures}
-\begin{frame}{Lists}
+\begin{frame}[fragile]{Functions}
+
+    \begin{minted}{python}
+def launch_holy_grenade(grenade):
+    count = 3
+    take_holy_pin_out(grenade)
+    wait(count)
+    throw(grenade)
+    print('Boom!')
+
+grenade = get_new_grenade()
+launch_holy_grenade(grenade)
+    \end{minted}
+
+Out:
+    \begin{tcolorbox}
+Boom!
+    \end{tcolorbox}
 \end{frame}
 
-\begin{frame}{Dictionaries}
+\begin{frame}[fragile]{Loops}
+    \begin{minted}{python}
+>>> while i != 5:
+...     i = random.randint(0,10)
+    \end{minted}
+
+    \pause
+    \begin{minted}{python}
+>>> for i in range(3):
+...     print(i)
+...
+0
+1
+2
+    \end{minted}
+\end{frame}
+
+\begin{frame}{Conditions}
+\end{frame}
+
+\begin{frame}[fragile]{Exception}
+    \begin{minted}{python}
+>>> count = 3
+>>> try:
+...     'Then shalt thou count to ' + count + '.'
+... except TypeError:
+...     'NI!'
+...
+'NI!'
+    \end{minted}
 \end{frame}
 
 \section{Modules}
