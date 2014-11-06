@@ -11,6 +11,9 @@ $(SRC).pdf: $(SRC).tex Makefile
 	$(COMMAND)
 	$(COMMAND)
 
+.PHONY: slides
+slides: $(SRC).pdf
+
 .PHONY: evince
 evince: $(SRC).pdf
 	nohup evince $(SRC).pdf > /dev/null 2>&1 &
