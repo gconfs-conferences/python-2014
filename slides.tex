@@ -217,6 +217,18 @@ TypeError: Can't convert 'int' object to str implicitly
     \end{minted}
 \end{frame}
 
+\begin{frame}[fragile]{Exception}
+    \begin{minted}{python}
+>>> count = 3
+>>> try:
+...     'Then shalt thou count to ' + count + '.'
+... except TypeError:
+...     'NI!'
+...
+'NI!'
+    \end{minted}
+\end{frame}
+
 \begin{frame}[fragile]{Functions}
 
     Let's forget the interpretor for now.
