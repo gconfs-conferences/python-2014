@@ -1,5 +1,5 @@
 slides.pdf: slides.tex Makefile
-	pdflatex $<
+	pdflatex -shell-escape $<
 
 .PHONY: evince
 evince: slides.pdf
@@ -18,3 +18,4 @@ clean:
 	rm -f slides.out
 	rm -f slides.snm
 	rm -f slides.toc
+	rm -f slides.vrb
