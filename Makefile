@@ -1,5 +1,5 @@
 SRC=slides
-COMMAND=pdflatex -shell-escape $(SRC)
+COMMAND=pdflatex -shell-escape $(SRC).tex
 
 # This rule compiles the pdf exactly once (two passes are needed to properly
 # generate the slides)
