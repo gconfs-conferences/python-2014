@@ -4,6 +4,11 @@
 \usepackage{soul}
 \usepackage{minted}
 
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}
+\AfterEndEnvironment{minted}{\end{tcolorbox}}
+
 \newcommand{\myurl}[1]{\textcolor{blue}{\underline{\url{#1}}}}
 
 \usetheme{Warsaw}
