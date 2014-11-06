@@ -1,7 +1,10 @@
 \documentclass[ignorenonframetext,]{beamer}
 
 \usepackage{hyperref}
+\usepackage{soul}
 \usepackage{minted}
+
+\newcommand{\myurl}[1]{\textcolor{blue}{\underline{\url{#1}}}}
 
 \usetheme{Warsaw}
 
@@ -102,7 +105,7 @@
 
     For some examples, see
 
-    \url{http://artifex.org/~hblanks/talks/2011/pep20_by_example.html} % TODO: in one line and in blue / underlined plz
+    \myurl{http://artifex.org/~hblanks/talks/2011/pep20_by_example.html}
 
 \end{frame}
 
