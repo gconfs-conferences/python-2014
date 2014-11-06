@@ -19,21 +19,8 @@
 
 
 % Add a title slide before each part, section and subsection
-% TODO: I want round corners and a little shadow like on the title page :<
-\AtBeginPart{
-    \let\insertpartnumber\relax
-    \let\partname\relax
-    \frame{\partpage}
-}
-\AtBeginSection{
-    \let\insertsectionnumber\relax
-    \let\sectionname\relax
-    \frame{\sectionpage}
-}
 \AtBeginSubsection{
-    \let\insertsubsectionnumber\relax
-    \let\subsectionname\relax
-    \frame{\subsectionpage}
+    \frame{\tableofcontents[currentsubsection]}
 }
 
 \setlength{\parindent}{0pt}
