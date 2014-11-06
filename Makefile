@@ -1,21 +1,31 @@
-slides.pdf: slides.tex Makefile
-	pdflatex -shell-escape $<
+SRC=slides
+COMMAND=pdflatex -shell-escape $(SRC)
+
+# This rule compiles the pdf exactly once (two passes are needed to properly
+# generate the slides)
+.PHONY: quick
+quick:
+	$(COMMAND)
+
+$(SRC).pdf: $(SRC).tex Makefile
+	$(COMMAND)
+	$(COMMAND)
 
 .PHONY: evince
-evince: slides.pdf
-	nohup evince slides.pdf > /dev/null 2>&1 &
+evince: $(SRC).pdf
+	nohup evince $(SRC).pdf > /dev/null 2>&1 &
 
 .PHONY: xpdf
-xpdf: slides.pdf
-	nohup xpdf slides.pdf > /dev/null 2>&1 &
+xpdf: $(SRC).pdf
+	nohup xpdf $(SRC).pdf > /dev/null 2>&1 &
 
 .PHONY: clean
 clean:
-	rm -f slides.pdf
-	rm -f slides.aux
-	rm -f slides.log
-	rm -f slides.nav
-	rm -f slides.out
-	rm -f slides.snm
-	rm -f slides.toc
-	rm -f slides.vrb
+	rm -f $(SRC).pdf
+	rm -f $(SRC).aux
+	rm -f $(SRC).log
+	rm -f $(SRC).nav
+	rm -f $(SRC).out
+	rm -f $(SRC).snm
+	rm -f $(SRC).toc
+	rm -f $(SRC).vrb
