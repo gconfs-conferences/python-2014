@@ -236,6 +236,9 @@ TypeError: Can't convert 'int' object to str implicitly
 
 \subsection{Data structures}
 \begin{frame}[fragile]{Lists}
+
+    Lists are easy and quick to use.
+
     \begin{minted}{python}
 >>> nums = [1, 3, 5, 9, 14]
 >>> nums
@@ -255,16 +258,37 @@ TypeError: Can't convert 'int' object to str implicitly
 \end{frame}
 
 \begin{frame}[fragile]{Lists}
+
+    Adding and removing from a list:
+
+    % TODO: should we explain what `del` really does?
     \begin{minted}{python}
 >>> nums = [1, 3, 5, 9, 14]
+>>> nums
+[1, 3, 5, 9, 14]
+>>> nums.append(24)
+>>> nums
+[1, 3, 5, 9, 14, 24]
+>>> del(nums[4])
+>>> nums
+[1, 3, 5, 9, 24]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Lists}
+
+    Lists comprehensions, those shiny little things are GREAT.
+
+    \begin{minted}{python}
+>>> nums = [1, 2, 5, 8, 14]
 >>> [i * 2 for i in nums]
-[2, 6, 10, 18, 28]
+[2, 4, 10, 16, 28]
     \end{minted}
 
     \pause
     \begin{minted}{python}
->>> [i / 2 for i in nums if i % 2]
-[0, 1, 2, 4]
+>>> [i // 2 for i in nums if not i % 2]
+[1, 4, 7]
     \end{minted}
 \end{frame}
 
@@ -301,7 +325,7 @@ TypeError: 'str' object does not support item assignment
 
 \begin{frame}[fragile]{Lists}
 
-    Lists are pretty great in fact.
+    I said list comprehensions were great.
 
     \begin{minted}[fontsize=\small]{python}
 >>> sentence = 'And now for something completly different.'
@@ -314,7 +338,23 @@ TypeError: 'str' object does not support item assignment
     \end{minted}
 \end{frame}
 
-\begin{frame}{Dictionaries}
+\begin{frame}[fragile]{Dictionaries}
+
+    You may know them as hashtables
+
+    \begin{minted}{python}
+>>> ages = {'Terry Gilliam': 73, 'John Cleese': 75}
+>>> ages['John Cleese']
+75
+>>> ages['Eric Idle'] = 71
+>>> ages
+{'Terry Gilliam': 73, 'Eric Idle': 71, 'John Cleese': 75}
+>>> del(ages['Terry Gilliam'])
+>>> ages
+{'Eric Idle': 71, 'John Cleese': 75}
+>>> list(ages.keys())
+['Eric Idle', 'John Cleese']
+    \end{minted}
 \end{frame}
 
 \subsection{Flow control}
@@ -376,25 +416,41 @@ Bradshaw, will you stand up please?
 \end{frame}
 
 \begin{frame}[fragile]{Loops}
+
+    The classic while.
+
     \begin{minted}{python}
 >>> while i != 5:
 ...     i = random.randint(0,10)
     \end{minted}
+\end{frame}
 
-    \pause
+\begin{frame}[fragile]{Loops}
+
+    And the way cooler for!
+
     \begin{minted}{python}
 >>> range(3)
 [0, 1, 2]
 >>> for i in range(3):
-...     print(i)
+...     print(i, end=' ')
 ...
-0
-1
-2
+0 1 2
+    \end{minted}
+
+    \pause
+    \begin{minted}{python}
+>>> for i in range(9, 0, -2):
+...     print(i, end=' ')
+...
+9 7 5 3 1
     \end{minted}
 \end{frame}
 
 \begin{frame}[fragile]{Loops}
+
+    The for loop can loop over any \emph{iterable} data type.
+
     \begin{minted}{python}
 >>> example_dict = {'first': 1, 'second': 2, 'third': 3}
 >>> for key, value in example_dict.items():
@@ -406,7 +462,49 @@ key second has value 2
     \end{minted}
 \end{frame}
 
-\begin{frame}{Conditions}
+\begin{frame}[fragile]{Loops}
+    \begin{minted}[fontsize=\small]{python}
+>>> questions = ['name', 'quest', 'favorite color']
+>>> answers = ['lancelot', 'the holy grail', 'blue']
+>>> list(zip(questions, answers))
+[('name', 'lancelot'), ('quest', 'the holy grail'),
+('favorite color', 'blue')]
+>>> for q, a in zip(questions, answers):
+...     print('What is your {0}?  It is {1}.'.format(q, a))
+...
+What is your name?  It is lancelot.
+What is your quest?  It is the holy grail.
+What is your favorite color?  It is blue.
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Conditions}
+
+    Readability, we like it.
+
+    \begin{minted}{python}
+>>> if authorized:
+...     print('Welcome!')
+...
+Welcome!
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Conditions}
+    \begin{minted}{python}
+>>> def knock(age, has_id, has_license):
+...     if age >= 18 and (has_id or has_license):
+...         print("OK, you're cool enoug")
+...     else:
+...         print("Nope.")
+...
+>>> knock(20, True, True)
+OK, you're cool enoug
+>>> knock(40, False, True)
+OK, you're cool enoug
+>>> knock(4, True, True)
+Nope.
+    \end{minted}
 \end{frame}
 
 \begin{frame}[fragile]{Exception}
