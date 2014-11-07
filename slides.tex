@@ -267,6 +267,23 @@ Boom!
     \end{tcolorbox}
 \end{frame}
 
+\begin{frame}[fragile]{Functions}
+
+    \begin{minted}{python}
+def say(name, message='Hi {}!'):
+    print(message.format(name))
+
+say('Mr. E.R. Bradshaw of Napier Court')
+say('Bradhsaw', message='{}, will you stand up please?')
+    \end{minted}
+
+Out:
+    \begin{tcolorbox}
+Hi Mr. E.R. Bradshaw of Napier Court!\\
+Bradshaw, will you stand up please?
+    \end{tcolorbox}
+\end{frame}
+
 \begin{frame}[fragile]{Loops}
     \begin{minted}{python}
 >>> while i != 5:
