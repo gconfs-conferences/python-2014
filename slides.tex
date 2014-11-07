@@ -275,12 +275,26 @@ Boom!
 
     \pause
     \begin{minted}{python}
+>>> range(3)
+[0, 1, 2]
 >>> for i in range(3):
 ...     print(i)
 ...
 0
 1
 2
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Loops}
+    \begin{minted}{python}
+>>> example_dict = {'first': 1, 'second': 2, 'third': 3}
+>>> for key, value in example_dict.items():
+...     print('key "{}" has value {}'.format(key, value))
+...
+key "second" has value 2
+key "third" has value 3
+key "first" has value 1
     \end{minted}
 \end{frame}
 
