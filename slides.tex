@@ -695,9 +695,22 @@ errors = sh.cat('make_errors.txt')
 \end{frame}
 
 \begin{frame}[fragile]{os}
+
+    Miscellaneous operating system interfaces
+
     \begin{tcolorbox}
     \begin{minted}{python}
-import os
+>>> import os
+>>> os.name
+'posix'
+>>> os.getcwd()
+'/home/dettorer/work/temp'
+>>> os.getlogin()
+'dettorer'
+>>> os.path.join('src', 'dir1', 'subdir')
+'src/dir1/subdir'
+>>> os.access('a.out', os.X_OK)
+True
     \end{minted}
     \end{tcolorbox}
 \end{frame}
