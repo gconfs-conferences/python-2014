@@ -189,7 +189,7 @@
     \end{minted}
 
     \pause
-    \begin{minted}{python} % TODO: Good night or good morningdingdingding?
+    \begin{minted}{python}
 >>> 'Gooooood night ' + 'ding' * 5
 'Gooooood night dingdingdingdingding'
     \end{minted}
@@ -235,7 +235,68 @@ TypeError: Can't convert 'int' object to str implicitly
 \end{frame}
 
 \subsection{Data structures}
-\begin{frame}{Lists}
+\begin{frame}[fragile]{Lists}
+    \begin{minted}{python}
+>>> nums = [1, 3, 5, 9, 14]
+>>> nums
+[1, 3, 5, 9, 14]
+>>> nums[0]
+1
+>>> nums[1]
+3
+>>> nums[-1]
+14
+>>> nums[1:4]
+[3, 5, 9]
+>>> nums[1] = 21
+>>> nums
+[1, 21, 5, 9, 14]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Lists}
+    \begin{minted}{python}
+>>> nums = [1, 3, 5, 9, 14]
+>>> [i * 2 for i in nums]
+[2, 6, 10, 18, 28]
+    \end{minted}
+
+    \pause
+    \begin{minted}{python}
+>>> [i / 2 for i in nums if i % 2]
+[0, 1, 2, 4]
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Lists}
+
+    By the way, strings are lists.
+
+    \begin{minted}{python}
+>>> filename = 'file.c'
+>>> filename[-2:]
+'.c'
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Lists}
+
+    But strings are immutable
+
+    \begin{minted}{python}
+>>> filename[-1] = 'h'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+    \end{minted}
+
+    \pause
+    Just assign a new value:
+    \begin{minted}{python}
+>>> filename = filename[:-1] + 'h'
+>>> filename
+'file.h'
+    \end{minted}
 \end{frame}
 
 \begin{frame}{Dictionaries}
@@ -282,6 +343,8 @@ Boom!
 
 \begin{frame}[fragile]{Functions}
 
+    Keyword arguments! (or optional arguments)
+
     \begin{minted}{python}
 def say(name, message='Hi {}!'):
     print(message.format(name))
@@ -320,11 +383,11 @@ Bradshaw, will you stand up please?
     \begin{minted}{python}
 >>> example_dict = {'first': 1, 'second': 2, 'third': 3}
 >>> for key, value in example_dict.items():
-...     print('key "{}" has value {}'.format(key, value))
+...     print('key {} has value {}'.format(key, value))
 ...
-key "second" has value 2
-key "third" has value 3
-key "first" has value 1
+key third has value 3
+key first has value 1
+key second has value 2
     \end{minted}
 \end{frame}
 
