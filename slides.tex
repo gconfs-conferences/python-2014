@@ -613,6 +613,12 @@ TypeError: Can't convert 'int' object to str implicitly
 
 \begin{frame}[fragile]{argparse}
 
+    \begin{quote}
+    Parser for command-line options, arguments and sub-commands
+    \end{quote}
+
+    \begin{overprint}
+    \onslide<1>
     myprogram.py:
     \begin{tcolorbox}
     \begin{minted}[fontsize=\small]{python}
@@ -624,6 +630,8 @@ print('You entered "{}".'.format(args.foo))
     \end{minted}
     \end{tcolorbox}
 
+    \onslide<2>
+    In a shell:
     \begin{tcolorbox}
         \begin{Verbatim}[fontsize=\small]
 $ python myprogram.py --help
@@ -637,11 +645,14 @@ $ python myprogram.py --foo something
 You entered "something".
         \end{Verbatim}
     \end{tcolorbox}
+    \end{overprint}
 \end{frame}
 
 \begin{frame}[fragile]{shutil}
 
+    \begin{quote}
     High-level file operations
+    \end{quote}
 
     \begin{tcolorbox}
     \begin{minted}{python}
@@ -660,7 +671,9 @@ make_archive(archive_name, 'gztar', root_dir)
 
 \begin{frame}[fragile]{subprocess}
 
-    Subprocesse management (really?)
+    \begin{quote}
+    Subprocesse management
+    \end{quote}
 
     \begin{tcolorbox}
     \begin{minted}{python}
@@ -677,6 +690,10 @@ line_count = int(out.split()[0])
 \end{frame}
 
 \begin{frame}[fragile]{sh}
+
+    \begin{quote}
+        A full-fledged subprocess interface for Python that allows you to call any program as if it were a function.
+    \end{quote}
 
     Same, but with more MAGIC.\\
     (but it's an pypi module you have to install)\\
@@ -696,7 +713,9 @@ errors = sh.cat('make_errors.txt')
 
 \begin{frame}[fragile]{os}
 
+    \begin{quote}
     Miscellaneous operating system interfaces
+    \end{quote}
 
     \begin{tcolorbox}
     \begin{minted}{python}
