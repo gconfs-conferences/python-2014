@@ -321,6 +321,16 @@ key "first" has value 1
 \begin{frame}[fragile]{Exception}
     \begin{minted}{python}
 >>> count = 3
+>>> 'Then shalt thou count to ' + count + '.'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Can't convert 'int' object to str implicitly
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Exception}
+    \begin{minted}{python}
+>>> count = 3
 >>> try:
 ...     'Then shalt thou count to ' + count + '.'
 ... except TypeError:
