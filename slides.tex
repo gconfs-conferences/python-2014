@@ -678,11 +678,18 @@ line_count = int(out.split()[0])
 
 \begin{frame}[fragile]{sh}
 
-    pip install sh
+    Same, but with more MAGIC.\\
+    (but it's an pypi module you have to install)\\
+    Example: pip install sh
 
     \begin{tcolorbox}
     \begin{minted}{python}
 import sh
+sh.ls('-l')
+print(sh.sort(sh.du(sh.glob("*"), "-s"), "-rn"))
+sh.git.pull()
+sh.make(_out='make_output.txt', _err='make_errors.txt')
+errors = sh.cat('make_errors.txt')
     \end{minted}
     \end{tcolorbox}
 \end{frame}
