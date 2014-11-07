@@ -29,6 +29,7 @@ Plan (pas forcément définitif) :
         * re (moulette norme ?)
         * os
         * shutil
+        * datetime
     * Comment écrire le sien (spoil : vous avez rien à faire)
 * The end
     * Quelques concepts avancés (?) : (impérativement avoir des TL;DR bien définis)
