@@ -723,6 +723,93 @@ import datetime
 
 \subsection{Write your own ones!}
 
+\begin{frame}[fragile]{Write a module}
+
+    We already did it:
+
+    \begin{overprint}
+    \onslide<1>
+    my\_module.py:
+    \begin{tcolorbox}
+        \begin{minted}{python}
+def say(name, message='Hi {}!'):
+    print(message.format(name))
+
+def launch_holy_grenade():
+    count = 3
+    take_holy_pin_out()
+    wait(count)
+    throw()
+    print('Boom!')
+        \end{minted}
+    \end{tcolorbox}
+
+    \onslide<2>
+    interpretor (in the same folder):
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> import my_module
+>>> my_module.launch_holy_grenade()
+        \end{minted}
+Boom!
+        \begin{minted}{python}
+>>> my_module.say('Bradhsaw', message='Hello {}!)
+        \end{minted}
+Hello Bradshaw!
+    \end{tcolorbox}
+    \end{overprint}
+\end{frame}
+
+\begin{frame}[fragile]{Warning!}
+
+    Any toplevel code is executed at \emph{import}
+
+    my\_module.py:
+    \begin{tcolorbox}
+        \begin{minted}{python}
+def say(name, message='Hi {}!'):
+    print(message.format(name))
+
+print('NI!')
+        \end{minted}
+    \end{tcolorbox}
+
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> import my_module
+        \end{minted}
+NI!
+        \begin{minted}{python}
+>>> my_module.say('Chicken')
+        \end{minted}
+Hi Chicken!
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}[fragile]{Warning!}
+
+    Here's how to create a "main" function
+
+    my\_module.py:
+    \begin{tcolorbox}
+        \begin{minted}{python}
+def say(name, message='Hi {}!'):
+    print(message.format(name))
+
+if __name__ == '__main__':
+    print('NI!')
+        \end{minted}
+    \end{tcolorbox}
+
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> import my_module
+>>> my_module.say('Chicken')
+        \end{minted}
+Hi Chicken!
+    \end{tcolorbox}
+\end{frame}
+
 \section{The end}
 \subsection{A bit further}
 \subsection{And now for something completely different}
