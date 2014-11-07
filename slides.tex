@@ -670,6 +670,9 @@ subprocess.call(['git', 'pull', '--rebase'])
 
 out = subprocess.getoutput(['ls'])
 file_count = len(out.split('\n'))
+
+out = subprocess.getoutput('wc -l /var/log/Xorg.0.log')
+line_count = int(out.split()[0])
     \end{minted}
     \end{tcolorbox}
 \end{frame}
