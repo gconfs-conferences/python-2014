@@ -716,9 +716,23 @@ True
 \end{frame}
 
 \begin{frame}[fragile]{datetime}
+
+    \begin{quote}
+    Basic date and time types.
+    \end{quote}
+    What? \emph{"Basic"}?
+
     \begin{tcolorbox}
     \begin{minted}{python}
-import datetime
+>>> from datetime import datetime, delta
+>>> now = datetime.now()
+>>> print(now)
+2014-11-07 23:51:29.972649
+>>> print(now - timedelta(minutes=55))
+2014-11-07 22:56:29.972649
+>>> start = datetime(2014, 11, 1)
+>>> print(now - start)
+6 days, 23:51:29.972649
     \end{minted}
     \end{tcolorbox}
 \end{frame}
