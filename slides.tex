@@ -299,6 +299,21 @@ TypeError: 'str' object does not support item assignment
     \end{minted}
 \end{frame}
 
+\begin{frame}[fragile]{Lists}
+
+    Lists are pretty great in fact.
+
+    \begin{minted}[fontsize=\small]{python}
+>>> sentence = 'And now for something completly different.'
+>>> sentence.split()
+['And', 'now', 'for', 'something', 'completly', 'different.']
+>>> [word[0] for word in sentence.split()]
+['A', 'n', 'f', 's', 'c', 'd']
+>>> ''.join([word[0] for word in sentence.split()]).upper()
+'ANFSCD'
+    \end{minted}
+\end{frame}
+
 \begin{frame}{Dictionaries}
 \end{frame}
 
