@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage{soul}
 \usepackage{minted}
+\usepackage{fancyvrb}
 
 \usepackage{tcolorbox}
 \usepackage{etoolbox}
@@ -531,6 +532,33 @@ TypeError: Can't convert 'int' object to str implicitly
 
 \section{Modules}
 \subsection{MANY exist}
+
+\begin{frame}[fragile]{argparse}
+
+    myprogram.py:
+    \begin{minted}[fontsize=\small]{python}
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--foo', help='foo help')
+args = parser.parse_args()
+print('You entered "{}".'.format(args.foo))
+    \end{minted}
+
+    \begin{tcolorbox}
+        \begin{Verbatim}[fontsize=\small]
+$ python myprogram.py --help
+usage: myprogram.py [-h] [--foo FOO]
+
+optional arguments:
+ -h, --help  show this help message and exit
+  --foo FOO   foo help
+
+$ python myprogram.py --foo something
+You entered "something".
+        \end{Verbatim}
+    \end{tcolorbox}
+\end{frame}
+
 \subsection{Write your own ones!}
 
 \section{The end}
