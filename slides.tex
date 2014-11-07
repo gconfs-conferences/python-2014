@@ -660,9 +660,16 @@ make_archive(archive_name, 'gztar', root_dir)
 \end{frame}
 
 \begin{frame}[fragile]{subprocess}
+
+    Subprocesse management (really?)
+
     \begin{tcolorbox}
     \begin{minted}{python}
 import subprocess
+subprocess.call(['git', 'pull', '--rebase'])
+
+out = subprocess.getoutput(['ls'])
+file_count = len(out.split('\n'))
     \end{minted}
     \end{tcolorbox}
 \end{frame}
