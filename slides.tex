@@ -864,6 +864,27 @@ Hi Chicken!
 
 \section{The end}
 \subsection{A bit further}
+
+\begin{frame}[fragile]{OOP}
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> class Bag:
+...     def __init__(self):
+...         self.data = []
+...     def add(self, x):
+...         self.data.append(x)
+...     def look_inside(self):
+...         print(self.data)
+
+>>> my_bag = Bag()
+>>> my_bag.add('car')
+>>> my_bag.add('house')
+>>> my_bag.look_inside()
+['car', 'house']
+        \end{minted}
+    \end{tcolorbox}
+\end{frame}
+
 \subsection{And now for something completely different}
 
 \end{document}
