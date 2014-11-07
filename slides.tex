@@ -641,9 +641,20 @@ You entered "something".
 \end{frame}
 
 \begin{frame}[fragile]{shutil}
+
+    High-level file operations
+
     \begin{tcolorbox}
     \begin{minted}{python}
 import shutil
+shutil.copy('Makefile', 'src/Makefile')
+shutil.chown('Makefile', user='dettorer', group='users')
+print(shutil.disk_usage('/home'))
+
+archive_name = 'sources'
+root_dir = 'src'
+make_archive(archive_name, 'gztar', root_dir)
+# Creates sources.tar.gz
     \end{minted}
     \end{tcolorbox}
 \end{frame}
@@ -685,7 +696,7 @@ import datetime
 
 \begin{frame}[fragile]{And more!}
 
-    Look them up, all of them are pretty neat!
+    Look them up, they are all pretty neat!
 
     \begin{itemize}
         \item Regular expressions (import re)
