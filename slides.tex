@@ -844,7 +844,7 @@ Hi Chicken!
 
     my\_module.py:
     \begin{tcolorbox}
-        \begin{minted}{python}
+        \begin{minted}[fontsize=\small]{python}
 def say(name, message='Hi {}!'):
     print(message.format(name))
 
@@ -854,11 +854,18 @@ if __name__ == '__main__':
     \end{tcolorbox}
 
     \begin{tcolorbox}
-        \begin{minted}{python}
+        \begin{minted}[fontsize=\small]{python}
 >>> import my_module
 >>> my_module.say('Chicken')
         \end{minted}
 Hi Chicken!
+    \end{tcolorbox}
+
+    \begin{tcolorbox}
+        \begin{Verbatim}[fontsize=\small]
+$ python my_module.py
+NI!
+        \end{Verbatim}
     \end{tcolorbox}
 \end{frame}
 
