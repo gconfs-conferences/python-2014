@@ -663,7 +663,7 @@ print(shutil.disk_usage('/home'))
 
 archive_name = 'sources'
 root_dir = 'src'
-make_archive(archive_name, 'gztar', root_dir)
+shutil.make_archive(archive_name, 'gztar', root_dir)
 # Creates sources.tar.gz
     \end{minted}
     \end{tcolorbox}
@@ -672,7 +672,7 @@ make_archive(archive_name, 'gztar', root_dir)
 \begin{frame}[fragile]{subprocess}
 
     \begin{quote}
-    Subprocesse management
+    Subprocess management
     \end{quote}
 
     \begin{tcolorbox}
