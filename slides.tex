@@ -885,6 +885,51 @@ Hi Chicken!
     \end{tcolorbox}
 \end{frame}
 
+\begin{frame}[fragile]{Decorators}
+    \begin{overprint}
+    \onslide<1>
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> def twice(some_function):
+...    def wrapper():
+...        some_function()
+...        some_function()
+...    return wrapper
+...
+>>> @twice
+... def hello():
+...     print('hello')
+...
+>>> hello()
+hello
+hello
+        \end{minted}
+    \end{tcolorbox}
+
+    \onslide<2>
+    \begin{tcolorbox}
+        \begin{minted}{python}
+>>> def twice(some_function):
+...    def wrapper(*args, **kwargs):
+...        some_function(*args, **kwargs)
+...        some_function(*args, **kwargs)
+...    return wrapper
+...
+>>> @twice
+... def hello(name):
+...     print('hello, {}'.format(name))
+...
+>>> hello('world')
+hello, world
+hello, world
+        \end{minted}
+    \end{tcolorbox}
+
+    But we'll see that an other time...
+
+    \end{overprint}
+\end{frame}
+
 \subsection{And now for something completely different}
 
 \end{document}
