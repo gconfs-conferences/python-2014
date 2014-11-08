@@ -327,7 +327,7 @@ TypeError: Can't convert 'int' object to str implicitly
 
 \begin{frame}[fragile]{Lists}
 
-    By the way, strings are lists.
+    By the way, strings can be used like lists.
 
     \begin{tcolorbox}
     \begin{minted}{python}
@@ -822,16 +822,14 @@ Hello Bradshaw!
 def say(name, message='Hi {}!'):
     print(message.format(name))
 
-print('NI!')
+say('test', message='this is a {}')
         \end{minted}
     \end{tcolorbox}
 
     \begin{tcolorbox}
         \begin{minted}{python}
 >>> import my_module
-        \end{minted}
-NI!
-        \begin{minted}{python}
+this is a test
 >>> my_module.say('Chicken')
         \end{minted}
 Hi Chicken!
@@ -849,7 +847,7 @@ def say(name, message='Hi {}!'):
     print(message.format(name))
 
 if __name__ == '__main__':
-    print('NI!')
+    say('test', message='this is a {}')
         \end{minted}
     \end{tcolorbox}
 
@@ -864,7 +862,7 @@ Hi Chicken!
     \begin{tcolorbox}
         \begin{Verbatim}[fontsize=\small]
 $ python my_module.py
-NI!
+this is a test
         \end{Verbatim}
     \end{tcolorbox}
 \end{frame}
